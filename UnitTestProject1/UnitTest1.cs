@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Diagnostics;
+using TestProjectForUtests;
 
-namespace TestProjectForUtests
+namespace UnitTestProject1
 {
     [TestClass]
-    class MyFancyClass
+    public class UnitTest1
     {
-        MyFancyClass my;
+        TestFancyClass my;
 
         [ClassInitialize]
-
         public static void TestFixtureSetup(TestContext context)
         {
             Debug.WriteLine("Class set up: " + context);
@@ -21,16 +19,14 @@ namespace TestProjectForUtests
 
 
         [TestInitialize]
-
         public void Setup()
         {
             Debug.WriteLine("Hello this is setup");
-            my = new MyFancyClass(6, 7);
+            my = new TestFancyClass(6, 7);
         }
 
 
         [TestMethod]
-
         public void TestAdd()
         {
             Debug.WriteLine("TestAdd");
@@ -47,11 +43,10 @@ namespace TestProjectForUtests
         }
 
         [TestCleanup]
-
         public void Cleanup()
         {
             Debug.WriteLine("Cleaned");
-        
+
 
         }
     }
